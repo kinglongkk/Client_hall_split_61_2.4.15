@@ -31,39 +31,40 @@ cc.Class({
 		this.runMsg();
 	},
 
-	runMsg:function(){
-
-		this.msg.stopAllActions();
-
-		if(!this.msgList.length) return;
-
-		if(this.count >= this.msgList.length){
+	runMsg: function () {
+		// 停止之前的动作
+		cc.Tween.stopAllByTarget(this.msg);
+	
+		if (!this.msgList.length) return;
+	
+		if (this.count >= this.msgList.length) {
 			this.count = 0;
 		}
-
+	
 		this.msg.getComponent(cc.Label).string = this.msgList[this.count];
-		
+	
 		let node = this.node.getChildByName("bg");
-
-		this.msg.x = node.width/2 + node.x;
-		this.msg.y = node.height/2;
-
+	
+		this.msg.x = node.width / 2 + node.x;
+		this.msg.y = node.height / 2;
+	
 		let mWidth = this.msg.width;
-
-		let moveX = node.x - node.width/2 - mWidth;
-
-		let time = (node.width + mWidth)/this.speed;
-
+		let moveX = node.x - node.width / 2 - mWidth;
+		let time = (node.width + mWidth) / this.speed;
+	
+		// 记录 this 以便回调中继续调用
 		let self = this;
-
-		let seq = cc.sequence(cc.moveTo(time, cc.v2(moveX,this.msg.y)),cc.callFunc(function(){
-			this.runMsg();
-		}, this));
-
-		this.msg.runAction(seq);
-
+	
+		cc.tween(this.msg)
+		  .to(time, { position: cc.v2(moveX, this.msg.y) })
+		  .call(() => {
+			  self.runMsg();
+		  })
+		  .start();
+	
 		this.count++;
 	},
+	
 
 	GetNoticeMsg:function(serverPack){
 		let list = serverPack;

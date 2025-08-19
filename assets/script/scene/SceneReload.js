@@ -384,7 +384,7 @@ var SceneReload = cc.Class({
             let keyNameList = this.AllTableDict[tableName];
             let tablePath = 'jsonData/' + tableName;
 
-            this.Client.ControlManager.CreateLoadPromise(tablePath, cc.RawAsset)
+            this.Client.ControlManager.CreateLoadPromise(tablePath, cc.Asset)
                                     .then(function(textData){
                                         that.loadTableCount += 1;
                                         that.allTableDataDict[tableName] = {"Data":textData, "KeyNameList":keyNameList};

@@ -20,18 +20,24 @@ cc.Class({
 		this.startScale = this.node.getScale();
 	},
 
-	SetWndScale:function(endScale, posID){
-		this.node.stopActionByTag(55555);
+	SetWndScale: function (endScale, posID) {
+		// 停止可能正在运行的缓动
+		// cc.tween().stopAllByTarget(this.node);
+		// 或者，如果只停止这个特定的缓动，您需要保存缓动实例
+		if (this._scaleTween) {
+			this._scaleTween.stop();
+		}
+		
 		this.node.WndUserData = posID;
-
-		var action = cc.sequence(
-			cc.scaleTo(this.transTime, endScale),
-			cc.scaleTo(this.transTime, this.startScale),
-			cc.callFunc(this.OnScaleEnd, this)
-		);
-
-		action.setTag(55555);
-		this.node.runAction(action);
+	
+		// 创建一个包含所有缩放步骤的 cc.Tween
+		this._scaleTween = cc.tween(this.node)
+			.to(this.transTime, { scale: endScale })  // 缩放到endScale
+			.to(this.transTime, { scale: this.startScale }) // 再缩放到startScale
+			.call(() => {
+				this.OnScaleEnd(); // 调用回调函数
+			})
+			.start();
 	},
 
 	OnScaleEnd:function(sender){
