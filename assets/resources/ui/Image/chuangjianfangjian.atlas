@@ -1,0 +1,62 @@
+
+chuangjianfangjian.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg3
+  rotate: false
+  xy: 2, 36
+  size: 287, 251
+  orig: 287, 251
+  offset: 0, 0
+  index: -1
+cjfj_1
+  rotate: false
+  xy: 350, 358
+  size: 65, 145
+  orig: 65, 145
+  offset: 0, 0
+  index: -1
+cjfj_2
+  rotate: true
+  xy: 291, 3
+  size: 284, 194
+  orig: 284, 194
+  offset: 0, 0
+  index: -1
+cjfj_3
+  rotate: false
+  xy: 2, 289
+  size: 346, 214
+  orig: 346, 214
+  offset: 0, 0
+  index: -1
+tittle3_1
+  rotate: false
+  xy: 417, 412
+  size: 43, 44
+  orig: 43, 44
+  offset: 0, 0
+  index: -1
+tittle3_2
+  rotate: false
+  xy: 350, 312
+  size: 46, 44
+  orig: 46, 44
+  offset: 0, 0
+  index: -1
+tittle3_3
+  rotate: false
+  xy: 417, 458
+  size: 44, 45
+  orig: 44, 45
+  offset: 0, 0
+  index: -1
+tittle3_4
+  rotate: false
+  xy: 463, 460
+  size: 42, 43
+  orig: 42, 43
+  offset: 0, 0
+  index: -1

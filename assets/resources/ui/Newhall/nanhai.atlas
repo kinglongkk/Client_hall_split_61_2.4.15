@@ -1,0 +1,76 @@
+
+nanhai.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+lian
+  rotate: false
+  xy: 263, 192
+  size: 148, 150
+  orig: 148, 150
+  offset: 0, 0
+  index: -1
+shangbi
+  rotate: true
+  xy: 263, 91
+  size: 99, 165
+  orig: 99, 165
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 2, 59
+  size: 259, 441
+  orig: 259, 441
+  offset: 0, 0
+  index: -1
+toufa
+  rotate: false
+  xy: 263, 344
+  size: 177, 156
+  orig: 177, 156
+  offset: 0, 0
+  index: -1
+yifu1
+  rotate: true
+  xy: 392, 2
+  size: 87, 77
+  orig: 87, 77
+  offset: 0, 0
+  index: -1
+yifu2
+  rotate: true
+  xy: 131, 26
+  size: 31, 61
+  orig: 31, 61
+  offset: 0, 0
+  index: -1
+yifu3
+  rotate: false
+  xy: 2, 13
+  size: 127, 44
+  orig: 127, 44
+  offset: 0, 0
+  index: -1
+yifu4
+  rotate: false
+  xy: 442, 432
+  size: 46, 43
+  orig: 46, 43
+  offset: 0, 0
+  index: -1
+yifu5
+  rotate: false
+  xy: 263, 2
+  size: 127, 87
+  orig: 127, 87
+  offset: 0, 0
+  index: -1
+yifu6
+  rotate: false
+  xy: 442, 477
+  size: 68, 23
+  orig: 68, 23
+  offset: 0, 0
+  index: -1

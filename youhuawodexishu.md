@@ -1,0 +1,15 @@
+UIUnionPLSet.js
+去掉二选一选项框，去掉赛事成本输入框。
+UIClubMainBase.js
+找到推广员按钮 btn_promoter 找到推广员页面UIPromoterAllManager.js和UIPromoterAllManager_2.js  找到我的系数按钮 btn_selfFenCheng
+
+活跃系数
+UIUserSelfBaoMingFei.js
+UIUserSetBaoMingFei.js 
+UIUserSetBaoMingFeiDetail.js 
+UIUserSetReservedBaoMingFei.js
+
+Cocoscreator 节点名称：scorePercentEditBox
+promotionCalcActiveItemList
+
+在

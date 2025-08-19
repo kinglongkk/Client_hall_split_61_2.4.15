@@ -1,0 +1,42 @@
+/*
+创建房间子界面
+ */
+var app = require("app");
+
+var fzmjChildCreateRoom = cc.Class({
+    extends: require("BaseChildCreateRoom"),
+
+    properties: {
+
+    },
+    //需要自己重写
+	CreateSendPack: function (renshu, setCount, isSpiltRoomCard) {
+		let sendPack = {};
+		let paofeng=this.GetIdxByKey('paofeng');
+		let piaofen=this.GetIdxByKey('piaofen');
+		let pengpai=this.GetIdxByKey('pengpai');
+		let fangjian=this.GetIdxsByKey('fangjian');
+		let xianShi=this.GetIdxByKey('xianShi');
+		let jiesan=this.GetIdxByKey('jiesan');
+		let gaoji=this.GetIdxsByKey('gaoji');
+
+		sendPack = {
+			"paofeng":paofeng,
+			"piaofen":piaofen,
+			"pengpai":pengpai,
+			"fangjian":fangjian,
+			"xianShi":xianShi,
+			"jiesan":jiesan,
+			"gaoji":gaoji,
+
+			"playerMinNum": renshu[0],
+			"playerNum": renshu[1],
+			"setCount": setCount,
+			"paymentRoomCardType": isSpiltRoomCard,
+
+		}
+		return sendPack;
+	},
+});
+
+module.exports = fzmjChildCreateRoom;

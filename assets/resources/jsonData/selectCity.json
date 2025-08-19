@@ -1,0 +1,47 @@
+{
+  "1010000": {
+    "Id": 1010000,
+    "Type": 1,
+    "Ascription": 0,
+    "Name": "福建省",
+    "Popular": 0,
+    "DefaultCity": 0,
+    "Game": "8,30",
+    "xinhua": 1,
+    "baodao": 0,
+    "Lock": 0,
+    "sansan": 1,
+    "ganzhou": 0,
+    "guosou": 0
+  },
+  "1010200": {
+    "Id": 1010200,
+    "Type": 2,
+    "Ascription": 1010000,
+    "Name": "漳州市",
+    "Popular": 0,
+    "DefaultCity": 0,
+    "Game": "8,30",
+    "xinhua": 1,
+    "baodao": 0,
+    "Lock": 0,
+    "sansan": 1,
+    "ganzhou": 0,
+    "guosou": 0
+  },
+  "1010203": {
+    "Id": 1010203,
+    "Type": 3,
+    "Ascription": 1010200,
+    "Name": "漳州",
+    "Popular": 0,
+    "DefaultCity": 0,
+    "Game": "8,30",
+    "xinhua": 0,
+    "baodao": 0,
+    "Lock": 0,
+    "sansan": 1,
+    "ganzhou": 0,
+    "guosou": 0
+  }
+}

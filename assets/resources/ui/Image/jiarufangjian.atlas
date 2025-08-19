@@ -1,0 +1,83 @@
+
+jiarufangjian.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg4
+  rotate: false
+  xy: 2, 233
+  size: 287, 251
+  orig: 287, 251
+  offset: 0, 0
+  index: -1
+jrfj_1
+  rotate: false
+  xy: 291, 376
+  size: 147, 108
+  orig: 147, 108
+  offset: 0, 0
+  index: -1
+jrfj_2
+  rotate: false
+  xy: 2, 2
+  size: 97, 78
+  orig: 97, 78
+  offset: 0, 0
+  index: -1
+jrfj_3
+  rotate: false
+  xy: 291, 308
+  size: 94, 66
+  orig: 94, 66
+  offset: 0, 0
+  index: -1
+jrfj_4
+  rotate: false
+  xy: 2, 82
+  size: 136, 149
+  orig: 136, 149
+  offset: 0, 0
+  index: -1
+jrfj_5
+  rotate: false
+  xy: 140, 94
+  size: 114, 137
+  orig: 114, 137
+  offset: 0, 0
+  index: -1
+jrfj_6
+  rotate: true
+  xy: 101, 37
+  size: 43, 36
+  orig: 43, 36
+  offset: 0, 0
+  index: -1
+tittle4_1
+  rotate: false
+  xy: 291, 261
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+tittle4_2
+  rotate: false
+  xy: 387, 330
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+tittle4_3
+  rotate: false
+  xy: 440, 439
+  size: 44, 45
+  orig: 44, 45
+  offset: 0, 0
+  index: -1
+tittle4_4
+  rotate: false
+  xy: 440, 394
+  size: 42, 43
+  orig: 42, 43
+  offset: 0, 0
+  index: -1

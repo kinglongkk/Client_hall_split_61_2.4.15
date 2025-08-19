@@ -1,0 +1,8 @@
+# Cocos Creator
+/build/
+/temp/
+/local/
+/library/
+/settings/
+/packages/
+*.log

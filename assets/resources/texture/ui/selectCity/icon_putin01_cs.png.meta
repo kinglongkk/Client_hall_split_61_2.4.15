@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "308464bb-2b04-4fdb-b593-bdfe424afe26",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 102,
+  "height": 72,
+  "platformSettings": {},
+  "subMetas": {
+    "icon_putin01_cs": {
+      "ver": "1.0.6",
+      "uuid": "ad90a4b3-20f6-4981-ad54-c82ff967aa8c",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "308464bb-2b04-4fdb-b593-bdfe424afe26",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 102,
+      "height": 72,
+      "rawWidth": 102,
+      "rawHeight": 72,
+      "borderTop": 35,
+      "borderBottom": 35,
+      "borderLeft": 32,
+      "borderRight": 32,
+      "subMetas": {}
+    }
+  }
+}

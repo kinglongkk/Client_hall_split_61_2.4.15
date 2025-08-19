@@ -1,0 +1,41 @@
+
+shangcheng.png
+size: 302,295
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cheche
+  rotate: false
+  xy: 177, 18
+  size: 123, 103
+  orig: 125, 105
+  offset: 1, 1
+  index: -1
+guang1
+  rotate: false
+  xy: 2, 123
+  size: 213, 170
+  orig: 213, 170
+  offset: 0, 0
+  index: -1
+pian
+  rotate: true
+  xy: 217, 213
+  size: 80, 81
+  orig: 82, 83
+  offset: 1, 1
+  index: -1
+shangcheng
+  rotate: false
+  xy: 217, 184
+  size: 56, 27
+  orig: 58, 29
+  offset: 1, 1
+  index: -1
+xingxing
+  rotate: false
+  xy: 2, 2
+  size: 173, 119
+  orig: 175, 121
+  offset: 1, 1
+  index: -1
