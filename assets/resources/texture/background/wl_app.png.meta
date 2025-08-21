@@ -12,12 +12,7 @@
   "height": 800,
   "platformSettings": {
     "default": {
-      "formats": [
-        {
-          "name": "astc_8x8",
-          "quality": "medium"
-        }
-      ]
+      "formats": []
     }
   },
   "subMetas": {

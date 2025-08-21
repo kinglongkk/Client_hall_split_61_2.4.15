@@ -10,7 +10,11 @@
   "packable": true,
   "width": 1664,
   "height": 750,
-  "platformSettings": {},
+  "platformSettings": {
+    "default": {
+      "formats": []
+    }
+  },
   "subMetas": {
     "BG2": {
       "ver": "1.0.6",
