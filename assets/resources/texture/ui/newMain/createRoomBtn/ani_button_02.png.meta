@@ -10,7 +10,16 @@
   "packable": true,
   "width": 380,
   "height": 124,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "ani_button_02": {
       "ver": "1.0.6",

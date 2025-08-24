@@ -10,7 +10,16 @@
   "packable": true,
   "width": 436,
   "height": 217,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "guntong": {
       "ver": "1.0.6",

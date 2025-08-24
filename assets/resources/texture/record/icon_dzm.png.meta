@@ -10,7 +10,16 @@
   "packable": true,
   "width": 80,
   "height": 69,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "icon_dzm": {
       "ver": "1.0.6",

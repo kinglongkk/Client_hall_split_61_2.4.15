@@ -10,7 +10,16 @@
   "packable": true,
   "width": 24,
   "height": 25,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "img_youdi": {
       "ver": "1.0.6",

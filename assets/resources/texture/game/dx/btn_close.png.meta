@@ -10,7 +10,16 @@
   "packable": true,
   "width": 89,
   "height": 89,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "btn_close": {
       "ver": "1.0.6",

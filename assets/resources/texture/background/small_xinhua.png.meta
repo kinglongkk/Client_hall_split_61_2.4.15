@@ -10,7 +10,16 @@
   "packable": true,
   "width": 285,
   "height": 60,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "small_xinhua": {
       "ver": "1.0.6",

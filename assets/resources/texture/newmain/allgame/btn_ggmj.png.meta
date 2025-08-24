@@ -10,7 +10,16 @@
   "packable": true,
   "width": 153,
   "height": 215,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "btn_ggmj": {
       "ver": "1.0.6",

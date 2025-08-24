@@ -10,7 +10,16 @@
   "packable": true,
   "width": 35,
   "height": 43,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "img_checkmap_cs": {
       "ver": "1.0.6",

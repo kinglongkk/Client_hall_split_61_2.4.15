@@ -10,7 +10,16 @@
   "packable": true,
   "width": 189,
   "height": 312,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "img_zhezhao": {
       "ver": "1.0.6",

@@ -10,7 +10,16 @@
   "packable": true,
   "width": 320,
   "height": 86,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "login_res_btn_wx": {
       "ver": "1.0.6",

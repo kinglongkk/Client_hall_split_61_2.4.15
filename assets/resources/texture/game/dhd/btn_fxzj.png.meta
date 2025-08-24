@@ -10,7 +10,16 @@
   "packable": true,
   "width": 180,
   "height": 66,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "btn_fxzj": {
       "ver": "1.0.6",

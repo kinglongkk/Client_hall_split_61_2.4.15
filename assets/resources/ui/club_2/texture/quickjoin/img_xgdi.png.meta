@@ -10,7 +10,16 @@
   "packable": true,
   "width": 23,
   "height": 23,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "img_xgdi": {
       "ver": "1.0.6",

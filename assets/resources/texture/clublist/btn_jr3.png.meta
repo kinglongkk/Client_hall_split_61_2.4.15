@@ -10,7 +10,16 @@
   "packable": true,
   "width": 179,
   "height": 40,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "btn_jr3": {
       "ver": "1.0.6",

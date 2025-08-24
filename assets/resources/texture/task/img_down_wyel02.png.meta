@@ -10,7 +10,16 @@
   "packable": true,
   "width": 934,
   "height": 274,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "img_down_wyel02": {
       "ver": "1.0.6",

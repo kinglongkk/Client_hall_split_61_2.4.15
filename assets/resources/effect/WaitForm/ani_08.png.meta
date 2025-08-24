@@ -10,7 +10,16 @@
   "packable": true,
   "width": 190,
   "height": 174,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "ani_08": {
       "ver": "1.0.6",

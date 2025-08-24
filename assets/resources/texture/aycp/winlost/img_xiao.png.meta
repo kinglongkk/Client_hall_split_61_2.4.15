@@ -10,7 +10,16 @@
   "packable": true,
   "width": 35,
   "height": 35,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "img_xiao": {
       "ver": "1.0.6",

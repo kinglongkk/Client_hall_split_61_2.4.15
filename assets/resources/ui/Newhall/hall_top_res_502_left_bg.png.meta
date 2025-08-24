@@ -10,7 +10,16 @@
   "packable": true,
   "width": 735,
   "height": 90,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "hall_top_res_502_left_bg": {
       "ver": "1.0.6",

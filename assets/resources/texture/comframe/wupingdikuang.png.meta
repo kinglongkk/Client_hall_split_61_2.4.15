@@ -10,7 +10,16 @@
   "packable": true,
   "width": 180,
   "height": 180,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "wupingdikuang": {
       "ver": "1.0.6",

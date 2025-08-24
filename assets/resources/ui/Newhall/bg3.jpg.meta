@@ -10,7 +10,16 @@
   "packable": true,
   "width": 2436,
   "height": 1125,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "bg3": {
       "ver": "1.0.6",

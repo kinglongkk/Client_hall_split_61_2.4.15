@@ -10,7 +10,16 @@
   "packable": true,
   "width": 407,
   "height": 152,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "btn_qyq": {
       "ver": "1.0.6",

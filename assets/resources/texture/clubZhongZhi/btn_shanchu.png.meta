@@ -10,7 +10,16 @@
   "packable": true,
   "width": 85,
   "height": 38,
-  "platformSettings": {},
+  "platformSettings": {
+    "android": {
+      "formats": [
+        {
+          "name": "astc_8x8",
+          "quality": "medium"
+        }
+      ]
+    }
+  },
   "subMetas": {
     "btn_shanchu": {
       "ver": "1.0.6",
