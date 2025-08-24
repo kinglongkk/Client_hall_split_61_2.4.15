@@ -196,12 +196,23 @@ cc.Class({
         this.table.getComponent(cc.Sprite).spriteFrame = this.table_bg[playerNum - 2];
     },
     ShowMore: function() {
-        this.data.getChildByName("btn_showmore").getChildByName("lb_num").getComponent(cc.Label).string = "点击隐藏";
+        this.data.getChildByName("btn_showmore")
+            .getChildByName("lb_num")
+            .getComponent(cc.Label).string = "点击隐藏";
+    
         let x = this.baseX - 425;
         let y = this.data.y;
-        let action = cc.sequence(cc.moveTo(0.2, cc.v2(x, y)), cc.callFunc(function() {}, this));
-        this.data.runAction(action);
+    
+        cc.Tween.stopAllByTarget(this.data); // 停止已有动作，避免冲突
+    
+        cc.tween(this.data)
+          .to(0.2, { position: cc.v2(x, y) })
+          .call(() => {
+              // 原来 callFunc 是空的，这里可以保留占位
+          })
+          .start();
     },
+    
     OnClose: function() {
 
     },

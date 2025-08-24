@@ -604,14 +604,26 @@ cc.Class({
         this.control_list.getChildByName('btn_pause').active=true;
     },
 
-    HideControl:function(){
-    	var action = cc.fadeOut(2.0);
-    	this.control_list.runAction(action);
+    // 隐藏控件
+    HideControl: function () {
+        // 停止可能正在运行的缓动，防止冲突
+        cc.tween(this.control_list).stop();
+        
+        // 使用 cc.tween() 创建并启动一个淡出缓动
+        cc.tween(this.control_list)
+            .to(2.0, { opacity: 0 }) // 2秒内将透明度变为0
+            .start();
     },
 
-    ShowControl:function(){
-    	var action = cc.fadeIn(0.5);
-    	this.control_list.runAction(action);
+    // 显示控件
+    ShowControl: function () {
+        // 停止可能正在运行的缓动
+        cc.tween(this.control_list).stop();
+        
+        // 使用 cc.tween() 创建并启动一个淡入缓动
+        cc.tween(this.control_list)
+            .to(0.5, { opacity: 255 }) // 0.5秒内将透明度变为255（完全不透明）
+            .start();
     },
 
 	//---------计时器，开局发牌逻辑--------------

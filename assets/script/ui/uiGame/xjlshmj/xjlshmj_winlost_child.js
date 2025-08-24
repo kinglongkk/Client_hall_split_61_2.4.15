@@ -380,14 +380,23 @@ cc.Class({
         this.FadeOutTip(btnNode.getChildByName("mapNode"));
     },
     FadeOutTip: function (node) {
-        let self = this;
-        node.stopAllActions();
-        node.active = false;
+        // 停止节点上所有正在运行的动作/缓动
+        cc.Tween.stopAllByTarget(node);
+        
+        // 设置初始状态，确保节点可见并完全不透明
+        node.active = true;
         node.opacity = 255;
-        let seq = cc.sequence(cc.delayTime(2), cc.fadeOut(2.0), cc.callFunc(function () {
-            node.active = false;
-            node.opacity = 255;
-        }, this));
-        node.runAction(seq);
+    
+        // 创建并启动一个cc.tween序列
+        // 这个序列包含：等待2秒 -> 渐隐2秒 -> 执行回调函数
+        cc.tween(node)
+            .delay(2)
+            .to(2.0, { opacity: 0 })
+            .call(() => {
+                // 动画结束后的回调：隐藏节点并将透明度重置
+                node.active = false;
+                node.opacity = 255;
+            })
+            .start();
     },
 });

@@ -425,48 +425,49 @@ var BaseForm = cc.Class({
 	},
 	//--------------动作函数------------
 	//显示界面动作
-	ShowFormAction:function(){
+	ShowFormAction: function () {
 
-		let openAction = null;
+		let openTween = null;
+		let startScale = this.InitNodeScale * 0.5;
 
-		//设置起点缩放倍速
-		let startScale = this.InitNodeScale*0.5;
-
-		switch(this.ShowEffectType){
-
-			case ShowEffectEnum.None:
-				break
-			case ShowEffectEnum.FromTop:
-				openAction = cc.scaleTo(0.5, this.InitNodeScale).easing(cc.easeElasticOut());
-				break
-			case ShowEffectEnum.FromBottom:
-				openAction = cc.scaleTo(0.5, this.InitNodeScale).easing(cc.easeElasticOut());
-				break
-			case ShowEffectEnum.FromLeft:
-				openAction = cc.scaleTo(0.5, this.InitNodeScale).easing(cc.easeElasticOut());
-				break
-			case ShowEffectEnum.FromRight:
-				openAction = cc.scaleTo(0.5, this.InitNodeScale).easing(cc.easeElasticOut());
-				break
-			case ShowEffectEnum.FromCenter:
-				openAction = cc.scaleTo(0.5, this.InitNodeScale).easing(cc.easeElasticOut());
-				break
-			default:
-				                console.error("ShowEffectType:%s error", this.ShowEffectType);
-				break
+		// 先停止之前可能存在的缓动
+		if (this._currentOpenTween) {
+			this._currentOpenTween.stop();
+			this._currentOpenTween = null;
 		}
 
-		//如果之前有打开动作,先停止
-		this.node.stopActionByTag(this.OpenActionTag);
+		// 设置起始状态
+		this.node.scale = startScale;
 
-		if(openAction){
-			let action = cc.sequence(
-				openAction,
-				cc.callFunc(this.OnFormActionEnd, this, "OpenAction"),
-			);
-			action.setTag(this.OpenActionTag);
-			this.node.scale = startScale;
-			this.node.runAction(action);
+		switch (this.ShowEffectType) {
+			case ShowEffectEnum.None:
+				// 没有动画，直接设置最终状态并调用回调
+				this.node.scale = this.InitNodeScale;
+				this.OnFormActionEnd("OpenAction");
+				break;
+
+			case ShowEffectEnum.FromTop:
+			case ShowEffectEnum.FromBottom:
+			case ShowEffectEnum.FromLeft:
+			case ShowEffectEnum.FromRight:
+			case ShowEffectEnum.FromCenter:
+				// 因为所有效果的缓动都是一样的，可以合并
+				openTween = cc.tween(this.node)
+					.to(0.5, { scale: this.InitNodeScale }, { easing: 'elasticOut' });
+				break;
+
+			default:
+				console.error("ShowEffectType:%s error", this.ShowEffectType);
+				break;
+		}
+
+		if (openTween) {
+			// 串联回调函数并启动缓动
+			this._currentOpenTween = openTween
+				.call(() => {
+					this.OnFormActionEnd("OpenAction");
+				})
+				.start();
 		}
 	},
 
@@ -1064,63 +1065,65 @@ var BaseForm = cc.Class({
 	},
 
 	/**
-	 * 控件动作接口
+	 * 控件动作接口 (cc.Tween 版本)
 	 */
 	WndRunAction:function(wndPath, actionType, argDict, useData){
 
 		let wndNode = cc.find(wndPath, this.node);
-		if(!wndNode){
-			                console.error("WndRunAction(%s,%s) wndPath not find", wndPath, actionType);
-			return
+		if (!wndNode) {
+			console.error("WndRunAction(%s,%s) wndPath not find", wndPath, actionType);
+			return;
 		}
 
 		wndNode.WndFlyUseData = useData;
 
-		//控件飞行效果
-		if(actionType == "FlyAction"){
-			var starPos = argDict["StartPos"];
-			var endPos = argDict["EndPos"];
-			var time = argDict["Time"];
+		// 停止已有动作（模拟 stopActionByTag）
+		cc.Tween.stopAllByTarget(wndNode);
+
+		// 控件飞行效果
+		if (actionType == "FlyAction") {
+			let starPos = argDict["StartPos"];
+			let endPos  = argDict["EndPos"];
+			let time    = argDict["Time"];
 
 			wndNode.setPosition(starPos);
-			wndNode.stopActionByTag(11111);
 
-			var action = cc.sequence(
-				cc.moveTo(time, endPos),
-				cc.callFunc(this.OnRunActionEnd, this, "FlyWndEnd")
-			);
-			action.setTag(11111);
-			wndNode.runAction(action);
+			cc.tween(wndNode)
+			.to(time, { position: endPos })
+			.call(() => {
+				this.OnRunActionEnd(wndNode, "FlyWndEnd");
+			})
+			.start();
 		}
-		//控件透明度效果
-		else if(actionType == "OpacityAction"){
-			var endFade = argDict["EndFade"];
-			var time = argDict["Time"];
+		// 控件透明度效果
+		else if (actionType == "OpacityAction") {
+			let endFade = argDict["EndFade"];
+			let time    = argDict["Time"];
 
-			var action = cc.sequence(
-				cc.fadeTo(time, endFade),
-				cc.callFunc(this.OnRunActionEnd, this, "OpacityWndEnd")
-			);
-
-			action.setTag(22222);
-			wndNode.runAction(action);
+			cc.tween(wndNode)
+			.to(time, { opacity: endFade })
+			.call(() => {
+				this.OnRunActionEnd(wndNode, "OpacityWndEnd");
+			})
+			.start();
 		}
-		//停留等待
-		else if(actionType == "DelayAction"){
-			var delayTime = argDict["DelayTime"];
-			var action = cc.sequence(
-				cc.delayTime(delayTime),
-				cc.callFunc(this.OnRunActionEnd, this, "DelayEnd")
-			);
+		// 停留等待
+		else if (actionType == "DelayAction") {
+			let delayTime = argDict["DelayTime"];
 
-			action.setTag(33333);
-			wndNode.runAction(action);
+			cc.tween(wndNode)
+			.delay(delayTime)
+			.call(() => {
+				this.OnRunActionEnd(wndNode, "DelayEnd");
+			})
+			.start();
 		}
-		else{
-			                console.error("WndRunAction(%s) error", actionType);
-			return
+		else {
+			console.error("WndRunAction(%s) error", actionType);
+			return;
 		}
 	},
+
 
 	/**
 	 * runAction结束回调

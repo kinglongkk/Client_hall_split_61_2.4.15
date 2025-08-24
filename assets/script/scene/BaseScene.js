@@ -264,23 +264,28 @@ cc.Class({
 	    // this.BackgroundLayerComponent.ShowMap(mapID);
     },
 
-	//场景震动
-	OnShakeScene:function(){
-		let rightDeltaPos = cc.v2(6,0);
-		let leftDeltaPos = cc.v2(-6,0);
+		// 场景震动
+	OnShakeScene: function () {
+		let rightDeltaPos = cc.v2(6, 0);
+		let leftDeltaPos = cc.v2(-6, 0);
 
-		let action = cc.sequence(
-									cc.moveBy(0.025,cc.v2(3,0)),
-									cc.moveBy(0.025,leftDeltaPos),
-									cc.moveBy(0.025,rightDeltaPos),
-									cc.moveBy(0.025,cc.v2(-3,0))
-								);
+		// 创建一个包含所有震动步骤的 cc.Tween
+		let shakeTween = cc.tween()
+			.by(0.025, { position: cc.v2(3, 0) })
+			.by(0.025, { position: leftDeltaPos })
+			.by(0.025, { position: rightDeltaPos })
+			.by(0.025, { position: cc.v2(-3, 0) });
 
-		this.UILayerNode.runAction(action);
+		// 让 UILayerNode 执行这个缓动
+		cc.tween(this.UILayerNode)
+			.then(shakeTween)
+			.start();
 
-		if(this.BackgroundLayerComponent){
-			let cloneAction = action.clone();
-			this.BackgroundLayerComponent.node.runAction(cloneAction);
+		// 如果背景节点存在，也执行相同的震动缓动
+		if (this.BackgroundLayerComponent) {
+			cc.tween(this.BackgroundLayerComponent.node)
+				.then(shakeTween)
+				.start();
 		}
 	},
 
